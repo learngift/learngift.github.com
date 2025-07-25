@@ -1,0 +1,37 @@
+exclude:
+  - node_modules
+  - script
+
+theme: jekyll-theme-primer
+author: e70838
+
+# my collection of technical notes
+collections:
+  note:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "note"
+    values:
+      layout: post
+
+tag_page_layout: tag
+tag_page_dir: tags
+
+# the following lines are useless on github. They are needed for local tests
+title: learngift.github.io
+description: Site web pour publier du contenu pédagogique
+
+plugins:
+  - jekyll-coffeescript
+  - jekyll-default-layout
+  - jekyll-gist
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-tagging
+  - jekyll-relative-links
