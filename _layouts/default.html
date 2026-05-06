@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="{{ '/' | relative_url }}" class="site-logo">Learn<span>Gift</span></a>
+      <nav class="site-nav">
+        <a href="{{ '/maven/' | relative_url }}">Maven</a>
+        <a href="{{ '/python/' | relative_url }}">Python</a>
+        <a href="{{ '/linux/' | relative_url }}">Linux</a>
+        <a href="{{ '/math/' | relative_url }}">Mathématiques</a>
+      </nav>
+    </div>
+  </header>
+  <main class="site-main">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>Contenu utile ? <a href="https://www.buymeacoffee.com/learngift" target="_blank" rel="noopener">☕ Offrez-moi un café</a></p>
+      <p class="footer-copy">&copy; {{ 'now' | date: "%Y" }} LearnGift</p>
+    </div>
+  </footer>
+</body>
+</html>

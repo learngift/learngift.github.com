@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<div class="home-container">
+  <section class="hero">
+    <h1>Bienvenue sur LearnGift</h1>
+    <p>Ressources pédagogiques librement accessibles sur la programmation et les mathématiques.</p>
+  </section>
+
+  <section class="subjects">
+    <h2>Sujets</h2>
+    <div class="subject-grid">
+      <a href="{{ '/maven/' | relative_url }}" class="subject-card">
+        <span class="subject-icon">☕</span>
+        <h3>Maven</h3>
+        <p>Gestion de projets Java avec Apache Maven</p>
+      </a>
+      <a href="{{ '/python/' | relative_url }}" class="subject-card">
+        <span class="subject-icon">🐍</span>
+        <h3>Python</h3>
+        <p>Programmation et scripting Python</p>
+      </a>
+      <a href="{{ '/linux/' | relative_url }}" class="subject-card">
+        <span class="subject-icon">🐧</span>
+        <h3>Linux</h3>
+        <p>Administration et commandes système Linux</p>
+      </a>
+      <a href="{{ '/math/' | relative_url }}" class="subject-card">
+        <span class="subject-icon">∑</span>
+        <h3>Mathématiques</h3>
+        <p>Cours et exercices niveau lycée</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="recent-posts">
+    <h2>Articles récents</h2>
+    <ul class="post-list">
+      {% for post in site.posts limit:10 %}
+      <li class="post-item">
+        <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+        <div class="post-meta">
+          <time>{{ post.date | date: "%d/%m/%Y" }}</time>
+          {% assign first_cat = post.categories | first %}
+          {% if first_cat %}
+          <span class="post-category">{{ first_cat }}</span>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

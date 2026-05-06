@@ -1,37 +1,32 @@
 exclude:
   - node_modules
   - script
+  - Gemfile
+  - Gemfile.lock
 
-theme: jekyll-theme-primer
+repository: https://github.com/learngift/learngift.github.com
+
 author: e70838
-
-# my collection of technical notes
-collections:
-  note:
-    output: true
-    permalink: /:collection/:name/
 
 defaults:
   - scope:
       path: ""
-      type: "note"
+      type: "posts"
     values:
       layout: post
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
 
-tag_page_layout: tag
-tag_page_dir: tags
+tag_permalink_style: pretty
 
-# the following lines are useless on github. They are needed for local tests
-title: learngift.github.io
-description: Site web pour publier du contenu pédagogique
+markdown: kramdown
+kramdown:
+  input: Kramdown
+  syntax_highlighter: rouge
 
-plugins:
-  - jekyll-coffeescript
-  - jekyll-default-layout
-  - jekyll-gist
-  - jekyll-optional-front-matter
-  - jekyll-paginate
-  - jekyll-readme-index
-  - jekyll-titles-from-headings
-  - jekyll-tagging
-  - jekyll-relative-links
+title: LearnGift
+description: Ressources pédagogiques sur Maven, Python, Linux et les Mathématiques
+

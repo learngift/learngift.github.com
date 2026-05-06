@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<div class="post-layout">
+  <aside class="sidebar">
+    <h3>Articles</h3>
+    {% assign cat_posts = site.posts | where_exp: "post", "post.categories contains page.subject" %}
+    <ul>
+      {% for post in cat_posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+      {% if cat_posts.size == 0 %}
+      <li><em>Bientôt…</em></li>
+      {% endif %}
+    </ul>
+  </aside>
+  <div class="post-content">
+    {{ content }}
+    {% assign cat_posts = site.posts | where_exp: "post", "post.categories contains page.subject" %}
+    {% if cat_posts.size > 0 %}
+    <ul class="post-list" style="margin-top:2rem">
+      {% for post in cat_posts %}
+      <li class="post-item">
+        <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+        <div class="post-meta">
+          <time>{{ post.date | date: "%d/%m/%Y" }}</time>
+        </div>
+        {% if post.excerpt %}
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
