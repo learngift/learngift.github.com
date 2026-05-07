@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="{{ '/' | relative_url }}" class="site-logo">Learn<span>Gift</span></a>
+      <a href="{{ '/' | relative_url }}" class="site-logo"><img src="{{ '/favicon.svg' | relative_url }}" alt="" class="site-logo-icon">Learn<span>Gift</span></a>
       <nav class="site-nav">
         <a href="{{ '/maven/' | relative_url }}">Maven</a>
         <a href="{{ '/python/' | relative_url }}">Python</a>

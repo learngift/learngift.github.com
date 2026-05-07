@@ -42,6 +42,16 @@ body {
   color: #f59e0b;
 }
 
+.site-logo-icon {
+  width: 34px;
+  height: 34px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  position: relative;
+  top: -2px;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
+}
+
 .site-nav a {
   color: rgba(255,255,255,0.75);
   text-decoration: none;
@@ -346,6 +356,14 @@ body {
   background: #f8fafc;
   font-weight: 700;
 }
+
+/* === Rouge syntax highlighting === */
+.highlight pre { margin: 0; }
+.highlight .c, .highlight .cm, .highlight .c1 { color: #64748b; font-style: italic; } /* commentaires */
+.highlight .nt  { color: #7dd3fc; }  /* balises */
+.highlight .na  { color: #fbbf24; }  /* attributs */
+.highlight .s, .highlight .s1, .highlight .s2 { color: #86efac; } /* chaînes */
+.highlight .nv, .highlight .cp { color: #f9a8d4; } /* variables, processing instructions */
 
 /* === Tags === */
 .tags {
